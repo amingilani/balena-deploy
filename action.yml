@@ -1,4 +1,4 @@
-name: 'Push to BalenaCloud'
+name: 'Push to Balena with tag'
 branding:
   color: "yellow"
   icon: "box"
@@ -13,6 +13,12 @@ inputs:
   application-path:
     description: "Optional. Provide a subfolder path to your BalenaCloud application, example: ./balena-wpe"
     default: "."
+  release-tag-key:
+    description: "Optional. Provide a release tag key, example: version"
+    default: ""
+  release-tag-value:
+    description: "Optional. Provide a release tag value, example: 1.0"
+    default: ""
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -20,3 +26,5 @@ runs:
     API_TOKEN: ${{ inputs.api-token }}
     APPLICATION_NAME: ${{ inputs.application-name }}
     APPLICATION_PATH: ${{ inputs.application-path }}
+    RELEASE_TAG_KEY: ${{ inputs.release-tag-key }}
+    RELEASE_TAG_VALUE: ${{ inputs.release-tag-value }}

@@ -16,6 +16,14 @@ Continuously deliver your applications to [BalenaCloud](https://www.balena.io/).
 
 _Optional_: Provide a sub-path to the location for application being deployed to BalenaCloud.  Defaults to the workspace root.   
 
+### `release-tag-key`
+
+**Required**: Key for Balena release tag.
+
+### `release-tag-value`
+
+**Required**: Value for Balena release tag.
+
 ## Workflow Example
 ```yaml
 name: BalenaCloud Push
@@ -36,4 +44,6 @@ jobs:
         api-token: ${{secrets.BALENA_API_TOKEN}}
         application-name: ${{secrets.BALENA_APPLICATION_NAME}}
         application-path: "./balena-wpe"
+        release-tag-key: Release
+        release-tag-value: 1.0
 ```
