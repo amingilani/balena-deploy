@@ -1,6 +1,6 @@
 # Balena Deploy
 
-Continuously deliver your applications to [BalenaCloud](https://www.balena.io/). A faster drop-in replacement to [Balena Push](https://github.com/theaccordance/balena-push).
+Continuously deliver your applications to [BalenaCloud](https://www.balena.io/). A fork of [Balena Push](https://github.com/theaccordance/balena-push). with extra version parameter.
 
 ## Inputs
 
@@ -15,6 +15,10 @@ Continuously deliver your applications to [BalenaCloud](https://www.balena.io/).
 ### `application-path`
 
 _Optional_: Provide a sub-path to the location for application being deployed to BalenaCloud.  Defaults to the workspace root.   
+
+### `version`
+
+_Optional_: Provide a version for the release being deployed to BalenaCloud. Defaults to 0.0.0.
 
 ## Workflow Example
 ```yaml
@@ -36,4 +40,5 @@ jobs:
         api-token: ${{secrets.BALENA_API_TOKEN}}
         application-name: ${{secrets.BALENA_APPLICATION_NAME}}
         application-path: "./balena-wpe"
+        version: 1.0.0
 ```
